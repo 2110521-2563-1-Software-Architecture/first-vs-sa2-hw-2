@@ -1,0 +1,115 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger Bookstore"
+  },
+  "tags": [
+    {
+      "name": "book",
+      "description": "Everything about your books"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/book/list": {
+      "get": {
+        "tags": [
+          "book"
+        ],
+        "summary": "Lists books",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/book/{id}": {
+      "get": {
+        "tags": [
+          "book"
+        ],
+        "summary": "Finds a book by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of book",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "book"
+        ],
+        "summary": "Deletes a book by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of book",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/book/create": {
+      "post": {
+        "tags": [
+          "book"
+        ],
+        "summary": "Inserts a book",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "order placed for purchasing the pet",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Book": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
