@@ -1,7 +1,7 @@
 import { BookInterface, Book } from './BookInterface'
 import axios, { AxiosInstance } from 'axios'
 
-class RestClient implements BookInterface {
+export default class RestClient implements BookInterface {
   private client: AxiosInstance
 
   constructor(host: string, port: number | string) {

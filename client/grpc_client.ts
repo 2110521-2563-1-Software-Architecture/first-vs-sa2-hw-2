@@ -1,7 +1,7 @@
 import { BookInterface, Book } from './BookInterface';
 import grpc, { GrpcObject } from 'grpc';
 
-class GrpcClient implements BookInterface {
+export default class GrpcClient implements BookInterface {
     private client: any;
     private booksProto: GrpcObject;
 
