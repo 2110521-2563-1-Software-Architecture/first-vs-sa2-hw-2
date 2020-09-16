@@ -11,15 +11,23 @@
 
 ## Graphs showing the benchmarking results with the explanation of your experimental settings
 
-> TODO
+We benchmarked the performance of gRPC and REST by simulating following scenarios and measured the response time in milliseconds. The benchmark code is available [here](https://github.com/2110521-2563-1-Software-Architecture/first-vs-sa2-hw-2/tree/master/benchmark).
 
-We benchmarked the performance of gRPC and REST by simulating three scenarios:
+### Single client with a small call to insert a book item, a bigger call to insert a list of multiple book items.
 
-1. Single client with a small call to insert a book item, a bigger call to insert a list of multiple book items.
-2. Multiple clients with different kind of calls
-3. Vary the number of concurrent calls from 1 to 4096 calls.
+![Scenario A](https://github.com/2110521-2563-1-Software-Architecture/first-vs-sa2-hw-2/raw/master/images/scenario_a.png)
 
-The performance of each scenario was measured by response time in millisecond.
+### Multiple clients with different kind of calls
+
+We use two clients that handle `insert` and `list` calls and vary the number of calls from 50 to 500.
+
+![Scenario B](https://github.com/2110521-2563-1-Software-Architecture/first-vs-sa2-hw-2/raw/master/images/scenario_b.png)
+
+This logarithmic scale graph clearly tells us that gRPC is much faster than REST when multiple clients call the system at the same time.
+
+### Vary the number of concurrent `list` calls from 1 to 4096 calls.
+
+![Scenario C](https://github.com/2110521-2563-1-Software-Architecture/first-vs-sa2-hw-2/raw/master/images/scenario_c.png)
 
 ## Discussion of the results why one method is better the other in which scenarioss
 
@@ -39,6 +47,6 @@ The gRPC code is shorter than REST. However, gRPC has larger learning curve and 
 
 Since REST uses HTTP/1 by default while gRPC uses HTTP/2 which is significantly faster.
 
-## Does your results comply with the results in [Medium Article](https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4?)? How?
+## Does your results comply with the results in the [Medium Article](https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4?)? How?
 
-> TODO
+Yes, our results are similar to the Medium's benchmarks, that is runtime per request of gRPC is significantly less than REST over HTTP/2 (we use REST over HTTP/1 but it isn't much different).
