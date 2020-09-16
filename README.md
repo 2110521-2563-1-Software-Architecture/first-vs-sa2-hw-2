@@ -13,6 +13,15 @@
 
 > TODO
 
+We benchmarked the performance of gRPC and REST by simulating three scenarios:
+
+1. Single client with a small call to insert a book item, a bigger call to insert a list of multiple book items.
+2. Multiple clients with different kind of calls
+3. Vary the number of concurrent calls from 1 to 4096 calls.
+4. Single client with multiple list calls.
+
+The performance of each scenario was measured by response time in millisecond.
+
 ## Discussion of the results why one method is better the other in which scenarios
 
 > TODO
@@ -31,6 +40,6 @@ The gRPC code is shorter than REST. However, gRPC has larger learning curve and 
 
 Since REST uses HTTP/1 by default while gRPC uses HTTP/2 which is significantly faster.
 
-## Does your results comply with the results in [Medium Article](https://medium.com/@bimeshde/grpc-vs-rest-performance-simplifiedfd35d01bbd4?)? How?
+## Does your results comply with the results in [Medium Article](https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4?)? How?
 
 > TODO
