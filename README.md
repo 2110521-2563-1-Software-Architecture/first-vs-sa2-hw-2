@@ -4,7 +4,7 @@
 
 1. Anan Methasate 6031061021
 2. Nisaruj Rattanaaram 6031033521
-3. Thaworn Kangwansinghanat6030226121
+3. Thaworn Kangwansinghanat 6030226121
 4. Sorawit Sunthawatrodom 6031057621
 5. Narin Trakarnvanich 6030320421
 6. Nathaphum Niyomsathien 6031014621
@@ -13,7 +13,7 @@
 
 > TODO
 
-We benchmarked the performance of gRPC and REST by simulating three scenarios:
+We benchmarked the performance of gRPC and REST by simulating four scenarios:
 
 1. Single client with a small call to insert a book item, a bigger call to insert a list of multiple book items.
 2. Multiple clients with different kind of calls
@@ -22,9 +22,9 @@ We benchmarked the performance of gRPC and REST by simulating three scenarios:
 
 The performance of each scenario was measured by response time in millisecond.
 
-## Discussion of the results why one method is better the other in which scenarios
+## Discussion of the results why one method is better the other in which scenarioss
 
-> TODO
+From the results, gRPC gives better performance in every scenarios because HTTP/1.1 which is used by REST isn't support concurrent requests. In the other hand, HTTP/2 (gRPC) natively supports request multiplexing which can handle incoming requests asynchronously. HTTP/2 also has better header compression methods which make gRPC send the payload faster.
 
 ## Comparison of the gRPC and REST API from the aspects of language neutral, ease of use, and performance
 
