@@ -13,12 +13,11 @@
 
 > TODO
 
-We benchmarked the performance of gRPC and REST by simulating four scenarios:
+We benchmarked the performance of gRPC and REST by simulating three scenarios:
 
 1. Single client with a small call to insert a book item, a bigger call to insert a list of multiple book items.
 2. Multiple clients with different kind of calls
 3. Vary the number of concurrent calls from 1 to 4096 calls.
-4. Single client with multiple list calls.
 
 The performance of each scenario was measured by response time in millisecond.
 
